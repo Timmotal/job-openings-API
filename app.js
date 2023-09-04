@@ -12,6 +12,8 @@ const rateLimiter = require('express-rate-limit') // will need a little bit of c
 // connectDB
 const connectDB = require('./db/connect')
 
+const authenticateUser = require('./middleware/authentication')
+
 
 
 
