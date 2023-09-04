@@ -18,6 +18,9 @@ const authenticateUser = require('./middleware/authentication')
 const authRouter = require('./routes/auth')
 const jobsRouter = require('./routes/jobs')
 
+// error handler
+const notFoundMiddleware = require('./middleware/not-found');
+const errorHandlerMiddleware = require('./middleware/error-handler');
 
 
 
