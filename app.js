@@ -40,4 +40,6 @@ app.use(express.json());
 app.get('/', (req, res) => {
   res.send(' The Jobs API')
 })
+// routes or middleware
+app.use('/api/v1/auth', authRouter)
 
