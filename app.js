@@ -42,4 +42,5 @@ app.get('/', (req, res) => {
 })
 // routes or middleware
 app.use('/api/v1/auth', authRouter)
+app.use('/api/v1/jobs', authenticateUser, jobsRouter)
 
