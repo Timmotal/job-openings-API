@@ -36,4 +36,8 @@ app.use(xss())
 app.use(express.json());
 // extra packages 
 
+// a dummy route -> so we know we've deployed the application
+app.get('/', (req, res) => {
+  res.send(' The Jobs API')
+})
 
