@@ -33,4 +33,7 @@ app.use(cors())
 app.use(xss())
 
 
+app.use(express.json());
+// extra packages 
+
 
