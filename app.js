@@ -47,3 +47,7 @@ app.use('/api/v1/jobs', authenticateUser, jobsRouter) // now all of the jobs rou
 app.use(notFoundMiddleware);
 app.use(errorHandlerMiddleware)
 
+const port = process.env.PORT || 3000;
+
+
+};
