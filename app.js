@@ -45,4 +45,5 @@ app.use('/api/v1/auth', authRouter)
 app.use('/api/v1/jobs', authenticateUser, jobsRouter) // now all of the jobs route are protected
 
 app.use(notFoundMiddleware);
+app.use(errorHandlerMiddleware)
 
