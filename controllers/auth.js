@@ -27,6 +27,17 @@ export const register = async (req, res) => { // making a call to the database -
     // after we save it and when the user tries to login, 
     // they provide the password, we are salt that again
     // we make sure it is the correct one and give them a JSON web token
-
+    const newUser = new User({
+      firstName,
+      lastName,
+      email,
+      password: passwordHash, // we don't even store the real password there
+      picturePath,
+      friends,
+      location,
+      occupation,
+      viewedProfile: Math.floor(Math.random() * 10000),// 1 through 10K
+      impressions: Math.floor(Math.random() * 10000),
+    });
 
 };
