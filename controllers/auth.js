@@ -19,3 +19,14 @@ export const register = async (req, res) => { // making a call to the database -
     } = req.body; //  grab this from the frontend, destructured from the request body
 
     const salt = await bcrypt.genSalt(); // generate salt we then use to encrypt the password
+    const passwordHash = await bcrypt.hash(password, salt); // hash them together
+    // <<<<<<<<<I AM NOT FOCUSED ON THE PROCESS BUT IN A RUSH TO THEM END GOAL>>>>>>>>>>>
+
+    // the way the register function will work
+    //  we encrypt the password and then save it
+    // after we save it and when the user tries to login, 
+    // they provide the password, we are salt that again
+    // we make sure it is the correct one and give them a JSON web token
+
+
+};
