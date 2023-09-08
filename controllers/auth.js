@@ -17,3 +17,5 @@ export const register = async (req, res) => { // making a call to the database -
       location,
       occupation,
     } = req.body; //  grab this from the frontend, destructured from the request body
+
+    const salt = await bcrypt.genSalt(); // generate salt we then use to encrypt the password
