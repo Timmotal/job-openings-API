@@ -31,7 +31,21 @@ const register = async (req, res) => {
     
     const user = await User.create({ ...req.body }) //create an object here,
     // console.log('before the beginiing') beginning of the ---> BUG
-
+    const token = user.createJWT() // the madness of code astounds me
+    // taking this out -> to mongoose
+    // below is object property renaming, i mistakenly thought it was destructure re-assignment
+    // const token = jwt.sign({ userID: user._id, name: user.name }, 'jwtSecret', {
+    //     expiresIn: '30d',
+    // }) 
+    // this is the case (as always) there is multiple setups that you can have
+    // e.g send back only the token, maybe frontend need the name directly 
+    // there are setups where frontend decodes the token instead of object property aliasing above
+    // res.status(StatusCodes.CREATED).json({ token }) // 201
+    // the object renaming got confusing to me, but as i guessed (unsure though)
+    // chatgpt said sometimes, it is done to structure the responses\
+    // i'm still not cool with it, with time i believe i will
+    // console.log('after the beginning') after the  beginning of the --<<<BUG >>>>
+    res.status(StatusCodes.CREATED).json({ user: { name: user.name}, token }) // 201
 
     // WE TOOK THIS OUT AND FOR WHAT?
     // res
