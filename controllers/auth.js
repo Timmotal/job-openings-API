@@ -62,7 +62,7 @@ const login = async (req, res) => {
     if (!email || !password) {
         throw new BadRequestError('have you no email and passwords eh')
     }
-  
+    const user = await User.findOne({email})
 
 }
 
