@@ -57,6 +57,12 @@ const register = async (req, res) => {
 const login = async (req, res) => {
     const { email, password } = req.body
 
+    //says he finds it easier to check for errors, here rather than chase it in the error handler
+    // says it his preference though
+    if (!email || !password) {
+        throw new BadRequestError('have you no email and passwords eh')
+    }
+  
 
 }
 
