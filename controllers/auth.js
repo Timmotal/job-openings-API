@@ -64,5 +64,11 @@ const login = async (req, res) => {
     }
     const user = await User.findOne({email})
 
+    if (!user) {
+        throw new UnauthenticatedError('wrong dial human, cant find that record here')
+    }
+
+    // here I think we might be comparing readable passwprds with hash password
+
 }
 
