@@ -54,3 +54,9 @@ const register = async (req, res) => {
     // .json({ user: { name: user.getName()}, token }) // 201 & i see us  object calling a function (this)
 }
 
+const login = async (req, res) => {
+    const { email, password } = req.body
+
+
+}
+
