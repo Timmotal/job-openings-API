@@ -77,6 +77,8 @@ const login = async (req, res) => {
     // compare passwords
 
     const token = user.createJWT();
- 
+    //  you always wanna send back the token, but optionally you want to include other things
+    res.status(StatusCodes.OK).json({ user: { name: user.name}, token}) //200
+    // res.send('login a user')
 }
 
