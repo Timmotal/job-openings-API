@@ -69,6 +69,10 @@ const login = async (req, res) => {
     }
 
     // here I think we might be comparing readable passwprds with hash password
+    const isPasswordCorrect = await user.comparePasswords(password)
+    if (!isPasswordCorrect) {
+        throw new UnauthenticatedError(' Invalid Credentials')
+    }
 
 }
 
