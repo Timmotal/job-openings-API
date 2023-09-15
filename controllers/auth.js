@@ -82,3 +82,8 @@ const login = async (req, res) => {
     // res.send('login a user')
 }
 
+// setup the functions as object and then export them
+module.exports = {
+    register,
+    login
+} 
