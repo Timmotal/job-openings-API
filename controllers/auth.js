@@ -74,5 +74,9 @@ const login = async (req, res) => {
         throw new UnauthenticatedError(' Invalid Credentials')
     }
 
+    // compare passwords
+
+    const token = user.createJWT();
+ 
 }
 
