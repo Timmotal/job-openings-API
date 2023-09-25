@@ -47,6 +47,11 @@ const createJob = async (req, res) => {
     // res.json(req.user)
 }
 
+const updateJob = async (req, res) => {
+
+  
+
+
 
 // setup the functions as object and then export them
 
