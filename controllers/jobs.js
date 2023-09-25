@@ -34,7 +34,16 @@ const getJob = async (req, res) => {
 
 const createJob = async (req, res) => {
     // we wanna create on req.body a new property on req.body the name of createdBy ->
-  
+    // in job model, that is what we call the property ()
+    console.log(req.body.createdBy)
+    // he added the property on req.body -> and it is located here req.user.userId 
+    // i think he added this line because -> he didnt want to get confused using different IDs 
+    req.body.createdBy = req.user.userId // we need this to search for jobs and update jobs
+    // we set createdby property to be equal to the user
+     console.log(req.body.createdBy)
+// we are missing is that user, it located in the req.user, what we are really looking for is the ID
+
+}
 
 
 // setup the functions as object and then export them
