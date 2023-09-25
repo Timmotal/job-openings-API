@@ -11,7 +11,24 @@ const getAllJobs = async (req, res) => {
     // res.send('get all tha frigging jobs')
 }
 
+const getJob = async (req, res) => {
+    const { 
+        user: { userId }, // nested destructuring
+     params: { id: jobId } // nested destructure and aliasing (renaming)
+    } = req
 
+    const job = await Job.findOne({
+        // we wanna check for both otherwise someone can just get the ID and access the job
+        _id: jobId,
+        createdBy: userId,
+    })
+
+    if (!job) {
+        throw new NotFoundError(`couldn't find that job you asked of`)
+    }
+    res.status(StatusCodes.CREATED).json({ job })
+    // res.send('a single job you get')
+}
 
 
 
