@@ -42,7 +42,9 @@ const createJob = async (req, res) => {
     // we set createdby property to be equal to the user
      console.log(req.body.createdBy)
 // we are missing is that user, it located in the req.user, what we are really looking for is the ID
-
+    const job = await Job.create(req.body) 
+    res.status(StatusCodes.CREATED).json({ job })
+    // res.json(req.user)
 }
 
 
