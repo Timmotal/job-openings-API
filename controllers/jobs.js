@@ -32,3 +32,10 @@ const getJob = async (req, res) => {
 
 
 
+const createJob = async (req, res) => {
+    // we wanna create on req.body a new property on req.body the name of createdBy ->
+  
+
+
+// setup the functions as object and then export them
+
