@@ -48,7 +48,14 @@ const createJob = async (req, res) => {
 }
 
 const updateJob = async (req, res) => {
+    const { 
+        user: { userId }, // nested destructuring
+        body: { company, position },
+     params: { id: jobId }, // nested destructure and aliasing (renaming)
+    } = req
+    // res.send('Update those Jobs')
 
+ 
   
 
 
