@@ -60,7 +60,11 @@ const updateJob = async (req, res) => {
         throw new BadRequestError|(' hey hey company or position cannot not be with words')
     }
 
-  
+    const job = await Job
+        .findByIdAndUpdate(
+            { _id: jobId, createdBy: userId},
+
+}
 
 
 
