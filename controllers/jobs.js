@@ -63,7 +63,12 @@ const updateJob = async (req, res) => {
     const job = await Job
         .findByIdAndUpdate(
             { _id: jobId, createdBy: userId},
+            req.body, { new: true, runValidators: true} // the update body
+            )
 
+    if (!job) {
+        throw new NotFoundError(`Not any job with such an id of numerical value ${jobId}`)
+    }
 }
 
 
