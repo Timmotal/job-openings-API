@@ -55,7 +55,11 @@ const updateJob = async (req, res) => {
     } = req
     // res.send('Update those Jobs')
 
- 
+    if ( company === '' || position === '' ) {
+        // he will talk about why he prefers setting uo the check in the controllers 
+        throw new BadRequestError|(' hey hey company or position cannot not be with words')
+    }
+
   
 
 
