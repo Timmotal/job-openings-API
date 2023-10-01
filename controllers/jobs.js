@@ -69,6 +69,8 @@ const updateJob = async (req, res) => {
     if (!job) {
         throw new NotFoundError(`Not any job with such an id of numerical value ${jobId}`)
     }
+    
+    res.status(StatusCodes.OK).json({ job })
 }
 
 
