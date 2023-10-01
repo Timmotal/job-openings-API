@@ -73,6 +73,11 @@ const updateJob = async (req, res) => {
     res.status(StatusCodes.OK).json({ job })
 }
 
+const deleteJob = async (req, res) => {
+  
+   
+}
+
 
 
 // setup the functions as object and then export them
