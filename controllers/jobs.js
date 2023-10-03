@@ -75,14 +75,13 @@ const updateJob = async (req, res) => {
 
 const deleteJob = async (req, res) => {
     const { // we are looking for the user and params
-        user: { userId }, // this is coming from the auth middleware
-     params: { id: jobId } // coming from the params. says it is important we understand that
+        user: { userId },ming from the params. says it is important we understand that
     } = req
+ 
+ 
 
    
 }
 
 
-
-// setup the functions as object and then export them
 
