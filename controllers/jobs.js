@@ -79,7 +79,10 @@ const deleteJob = async (req, res) => {
      params: { id: jobId } // coming from the params. says it is important we understand that
     } = req
  
- 
+    const job = await Job.findByIdAndRemove({
+        _id: jobId,
+        createdBy: userId,
+    })
 
    
 }
