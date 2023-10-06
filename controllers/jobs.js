@@ -84,7 +84,9 @@ const deleteJob = async (req, res) => {
         createdBy: userId,
     })
 
-   
+    if (!job) {
+        throw new NotFoundError(`Not any job with such an id of numerical value ${jobId}`)
+    }
 }
 
 
