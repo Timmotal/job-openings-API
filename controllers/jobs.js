@@ -96,5 +96,7 @@ const deleteJob = async (req, res) => {
 // setup the functions as object and then export them
 // setup the functions as object and then export them
 module.exports = {
+    getAllJobs,
+    getJob,
 
 }
