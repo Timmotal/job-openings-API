@@ -100,5 +100,6 @@ module.exports = {
     getJob,
     createJob,
     deleteJob,
+    updateJob
 
 }
