@@ -87,6 +87,8 @@ const deleteJob = async (req, res) => {
     if (!job) {
         throw new NotFoundError(`Not any job with such an id of numerical value ${jobId}`)
     }
+    // res.send('delete those jobs bro')
+    res.status(StatusCodes.OK).send() // OK is 200
 }
 
 
