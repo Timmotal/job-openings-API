@@ -34,6 +34,7 @@ const auth = async (req, res, next) => {
         // so if he gets the ID from the token -> he is really sure there is a user on the other-side
         // const user = User.findById(payload.id).select('-password')
         // req.user = user
+    } catch (error) {
     }
 }
 
