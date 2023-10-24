@@ -12,7 +12,8 @@ const auth = async (req, res, next) => {
     if (!authHeader || !authHeader.startsWith('Bearer ')) {
         throw new UnauthenticatedError('Authentication invalid unfortunately')
     }
-
+// we split this into an  array and then we want the second items
+    const token = authHeader.split(' ')[1]
 
 }
 
