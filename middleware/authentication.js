@@ -9,7 +9,9 @@ const auth = async (req, res, next) => {
 
     // says some setups do not have "spaces" and it doesn't really matter (07:54:44)
     // but how do these setups verify the token jumbled together with 'Bearer'
-  
+    if (!authHeader || !authHeader.startsWith('Bearer ')) {
+        throw new UnauthenticatedError('Authentication invalid unfortunately')
+    }
 
 
 }
