@@ -35,6 +35,7 @@ const auth = async (req, res, next) => {
         // const user = User.findById(payload.id).select('-password')
         // req.user = user
     } catch (error) {
+        throw new UnauthenticatedError('Authentication invalid unfortunately')
     }
 }
 
