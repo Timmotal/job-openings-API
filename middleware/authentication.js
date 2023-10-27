@@ -6,9 +6,6 @@ const { UnauthenticatedError } = require('../errors')// there is an index file, 
 const auth = async (req, res, next) => {
     // check header
     const authHeader = req.headers.authorization
-
-    // says some setups do not have "spaces" and it doesn't really matter (07:54:44)
-    // but how do these setups verify the token jumbled together with 'Bearer'
     if (!authHeader || !authHeader.startsWith('Bearer ')) {
         throw new UnauthenticatedError('Authentication invalid unfortunately')
     }
