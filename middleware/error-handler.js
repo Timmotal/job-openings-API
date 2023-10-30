@@ -30,7 +30,13 @@ const errorHandlerMiddleware = (err, req, res, next) => {
     customError.statusCode = 400  
   }
 
-  
+  if (err.code && err.code === 11000 ) {
+    // if the error.code is 11000 we know then we can access keyValue prop
+    // we are overriding the message -> feel this method Object.keys
+    customError.msg = `Duplicate value entered for ${Object.keys(err.keyValue)}
+    field, choose another value`
+    customError.statusCode = 400 // we also wanna change this
+  }
 
 
 }
