@@ -38,6 +38,9 @@ const errorHandlerMiddleware = (err, req, res, next) => {
     customError.statusCode = 400 // we also wanna change this
   }
 
-
+  if (err.name === 'CastError') {
+    customError.msg = `We do not have such ID of : ${err.value}`
+    customError.statusCode = 404
+  }n
 }
 
