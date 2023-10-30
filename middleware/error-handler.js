@@ -21,7 +21,15 @@ const errorHandlerMiddleware = (err, req, res, next) => {
   //   return res.status(err.statusCode).json({ msg: err.message })
   // }
 
-  
+  if (err.name === 'ValidationError') {
+    console.log(Object.values(err.errors))// incase you are confused -> I am a bit confused
+    // join all the object values back with a comma
+    customError.msg = Object.values(err.errors)
+      .map((item) => item.message)
+      .join(',')
+    customError.statusCode = 400  
+  }
+
   
 
 
