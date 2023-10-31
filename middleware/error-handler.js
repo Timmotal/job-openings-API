@@ -41,6 +41,13 @@ const errorHandlerMiddleware = (err, req, res, next) => {
   if (err.name === 'CastError') {
     customError.msg = `We do not have such ID of : ${err.value}`
     customError.statusCode = 404
-  }n
+  }
+  // we will do more work with the Error Handler
+  //  he wants to show us how to check for multiple mongoose errors
+  // instead of sending back this 500 one -> with one error message
+  // return res.status(StatusCodes.INTERNAL_SERVER_ERROR).json({ err }) // we will use this in other videos
+  // we are now doing that mongoose error sh*t -> (08:52:00)
+  return res.status(customError.statusCode).json({ msg: customError.msg}) // now back to this again
 }
 
+module.exports = errorHandlerMiddleware
