@@ -17,6 +17,9 @@ const JobSchema = new mongoose.Schema(
       enum: ['interview', 'declined', 'pending'],
       default: 'pending',
     },
+    createdBy: {
+    },
+   
   
   },
 );
