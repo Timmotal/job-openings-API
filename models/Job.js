@@ -23,6 +23,7 @@ const JobSchema = new mongoose.Schema(
       required: [true, 'Please provide user'],
     },
     jobType: {
+      type: String,
     },
   
   },
