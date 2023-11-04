@@ -18,6 +18,7 @@ const JobSchema = new mongoose.Schema(
       default: 'pending',
     },
     createdBy: {
+      type: mongoose.Types.ObjectId,
     },
    
   
