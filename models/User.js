@@ -7,6 +7,7 @@ const UserSchema = new mongoose.Schema({
         type: String,       
         required: [true, 'you dont have a name eh?'],
         minLength: 3,
+        maxLength: 50,
     },
    
 
