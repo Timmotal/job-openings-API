@@ -16,7 +16,11 @@ const UserSchema = new mongoose.Schema({
           /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/,
           'non valid email are excused',
         ],
-
+        unique: true,//  creates unique index
+        // technically not a validator, becomes important when we run validate method manually
+        // or when writing automated tests
+        // for example when trying to save a user and the email provided is already in use
+        // then user gets the duplicate error message
         
     },
 
