@@ -23,7 +23,8 @@ const UserSchema = new mongoose.Schema({
         // then user gets the duplicate error message
         
     },
-
+    password: {
+    
 })
 
 
