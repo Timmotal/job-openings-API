@@ -24,7 +24,11 @@ const UserSchema = new mongoose.Schema({
         
     },
     password: {
-    
+        type: String,
+  
+        // maxLength: 50, // removed because of hashedPasswords
+    },
+
 })
 
 
