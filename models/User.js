@@ -25,7 +25,8 @@ const UserSchema = new mongoose.Schema({
     },
     password: {
         type: String,
-  
+        required: [true, 'okay have you heard about passwords?'],
+        minLength: 3,
         // maxLength: 50, // removed because of hashedPasswords
     },
 
