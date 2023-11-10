@@ -32,6 +32,13 @@ const UserSchema = new mongoose.Schema({
 
 })
 
+// he suggests using the good old function keyword value →
+//  that way → this  → will be scoped to our document
+
+// UserSchema.pre('save', async function(next){ // removed next, we used async-await
+    UserSchema.pre('save', async function(){
+
+})
 
 
 
