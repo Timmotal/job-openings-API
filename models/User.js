@@ -37,7 +37,9 @@ const UserSchema = new mongoose.Schema({
 
 // UserSchema.pre('save', async function(next){ // removed next, we used async-await
     UserSchema.pre('save', async function(){
-
+    const salt = await bcrypt.genSalt(10)
+    this.password = await bcrypt.hash(this.password, salt)  // this will point to the document (UserSchema)
+    // next() // pass it on to the next middleware, removed it Async-Await will take care of it
 })
 
 
