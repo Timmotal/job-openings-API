@@ -51,5 +51,10 @@ const UserSchema = new mongoose.Schema({
 //     return this.name // why can we not just say name, why add this?
 // }
 
-
+UserSchema.methods.createJWT = function () {
+    // remember -> in the function, we can access the document, by using the below
+    // (I think I meant to say using "this")
+    
+    
+}
 
