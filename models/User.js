@@ -42,6 +42,14 @@ const UserSchema = new mongoose.Schema({
     // next() // pass it on to the next middleware, removed it Async-Await will take care of it
 })
 
+// says we can generate the token using the instance method instead
+// we are trying to keep all our logic in one place
+// function can be async, but we want "this" to reference this document so we use keyword (function)
+// UserSchema.methods.getName = function () {
+    // <<<<<<<CAAN ONE BE A BACKEND WITHOUT READING THE DOCS
+
+//     return this.name // why can we not just say name, why add this?
+// }
 
 
 
