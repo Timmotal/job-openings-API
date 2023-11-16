@@ -53,6 +53,7 @@ const UserSchema = new mongoose.Schema({
 
 UserSchema.methods.createJWT = function () {
     return jwt.sign(
+      { userId: this._id, name: this.name },
      
     )
   }
