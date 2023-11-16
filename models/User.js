@@ -52,11 +52,9 @@ const UserSchema = new mongoose.Schema({
 // }
 
 UserSchema.methods.createJWT = function () {
-    // remember -> in the function, we can access the document, by using the below
-    // (I think I meant to say using "this")
-    return jwt.sign(
-        { userId: this._id, name: this.name },
-         process.env.JWT_SECRET,
-    
-}
+  
+  }
+  
+ 
+  
 
