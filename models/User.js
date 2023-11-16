@@ -52,7 +52,9 @@ const UserSchema = new mongoose.Schema({
 // }
 
 UserSchema.methods.createJWT = function () {
-  
+    return jwt.sign(
+     
+    )
   }
   
  
