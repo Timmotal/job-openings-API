@@ -66,5 +66,6 @@ UserSchema.methods.createJWT = function () {
     return isMatch
   }
   
+  module.exports = mongoose.model('User', UserSchema)
   
 
